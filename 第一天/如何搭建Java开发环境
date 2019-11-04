@@ -1,0 +1,53 @@
+如何搭建Java的开发环境？
+
+    1、下载并安装JDK(建议使用1.8的版本)。
+	
+	    jdk：java开发工具包（包含了jre）。
+		
+		jre：java的运行环境。
+	
+	2、进行相关的配置。
+	
+	    需要配置三个参数：java_home   path   class_path
+		
+		配置的格式为：参数（变量）名称    参数(变量)值
+		
+		
+		第一种配置方式：（不是太推荐）
+		
+		java_home---> D:\Program Files\Java\jdk1.8.0_101
+		
+		path----->保持原来的配置信息;D:\Program Files\Java\jdk1.8.0_101\bin
+		
+		class_path---->D:\Program Files\Java\jdk1.8.0_101\lib
+		
+		注意：其中java_home 和 class_path变量 都是新建出来的。
+		      而path只是进行修改增加配置。
+			  
+		
+        第二种配置方式：（推荐）
+		
+		java_home---> D:\Program Files\Java\jdk1.8.0_101
+		
+		path----->保持原来的配置信息;%java_home%\bin
+		
+		class_path---->%java_home%\lib;%java_home%\lib\dt.jar,tools.jar
+				   
+	
+	3、进行配置的验证。
+	
+	    第一种方式：
+		通过cmd命令进入dos系统，输入javac 和 java 命令进行检测。
+		
+		第二种方式：
+		自己编写一个java应用程序，在这种环境之下进行运行。
+		
+		public  class  First{
+			public static  void  main(String[]  args){
+				System.out.println("Hello World!!");
+			}
+		}
+		
+		执行的时候，这样进行：
+		
+		cmd ---- >执行 javac First.java  ----->执行java First ----->出结果。
