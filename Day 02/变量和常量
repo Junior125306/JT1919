@@ -1,0 +1,70 @@
+       变量：不断变化的量。可以进行重新的赋值操作。
+       
+       常量：固定不变的量。不能进行重新赋值的操作。
+       
+      a、定义变量的语法格式：
+          
+            [修饰符]   数据类型   变量名称 [= 值]
+      
+      b、定义常量的语法格式：
+      
+            [修饰符]   final  数据类型  常量名称 = 值 
+    
+    提示!在同一个区域内，常量和变量的名称是不能重复的。
+    
+    注意 ： 一般我们定义常量的时候，名称使用的都是大写。
+public class Demo1 {
+	
+	public static void main(String[] args) {
+		
+		//定义一个变量
+		/**
+		 * 需求：输出一个“北大青鸟”
+		 */
+		System.out.println("北大");
+		
+		//输出一个"北大"
+		System.out.println("北大青鸟");
+		
+		System.out.println("============================================");
+		
+		//定义的变量，可以不手动进行赋值。
+		String  name;
+		
+		//使用变量来进行表示(定义了一个名字为msg的变量，值为“北大”)
+		String  msg = "北大";
+		//使用变量
+		System.out.println(msg);
+		
+		//针对这个msg的变量进行重新的赋值
+		msg = "北大青鸟";
+		System.out.println(msg);
+
+		System.out.println("=================================常量========================================");
+		
+		//定义一个常量(必须要进行手动赋值【手动初始化】)
+		final   String   city = "西安";
+		
+		final   int   age = 30;
+		
+		System.out.println(city);
+		System.out.println(age);
+		
+		//针对city进行重新赋值
+		//city = "上海";  错误的
+		
+		/**
+		 * 注意：常量是不允许再次进行重新赋值的操作。
+		 * 一般我们定义常量的时候，使用的都是大写。
+		 */
+		final   int   MAX_AGE = 50;
+		
+		//变量和常量是不能重名的。
+		/*
+		String  address = "北京";
+		
+		String  address = "南京";*/
+	}
+}
+
+        
