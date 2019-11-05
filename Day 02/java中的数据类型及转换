@@ -4,6 +4,16 @@
       boolean类型：  true  | false 
       public class Demo2 {
 	
+	数据类型的转换方式：
+      
+      1、自动转换：低级类型 自动 提升为 高级类型。
+      
+      2、强制转换：高级类型  强制 转换为 低级类型。
+      
+             语法格式为：  类型    变量名称 = （目标类型）（值）;
+
+      byte <short (char)<int<long<float<double
+       由低级---------------------->高级  的 序列 ，与boolean类型无关。
 	public static void main(String[] args) {
 		
 		//整数 系列=====
