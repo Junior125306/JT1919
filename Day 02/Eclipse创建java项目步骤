@@ -1,0 +1,15 @@
+打开eclipse ——> 
+Flie(或者在项目列表右键) ——> 
+New ——> 
+Project——> 
+Java Project ——> 
+在Poroject name给项目命名 ——> 
+在下方JRE处选择第二个 Use a project specific JRE  ——> 
+点击JRE块右下角Configure JREs来选择jre目录 ——> 
+点击Add ——> 
+Standard VM ——> Next
+点击JRE home右边的Directory选择JDK安装目录，下方数据会自动填写 ——> 
+点击Finish ——> OK ——> Next ——> Finish ——> 
+在左侧项目列表SRC下右键 ——> New ——>Class ——> 
+命名 ——> Finish
+创建完成可以进行编写了
