@@ -1,0 +1,37 @@
+
+ *   Scanner类的学习：
+ *   
+ *       1、Scanner类名。
+ *       
+ *       2、位于java.util包下。
+ *       
+ *       3、Scanner类是用于完成控制台 和 程序内部 进行交互的。
+public class Demo5 {
+	
+	public static void main(String[] args) {
+		//第一步：创建一个Scanner的对象。（创建了一个扫描器sc）
+		Scanner  sc = new Scanner(System.in);  //固定的
+		//第二步：在控制台进行信息的提示。
+		System.out.println("请输入您的姓名:");
+		//第三步：实现控制台数据的扫描。
+		String name = sc.next();  //??????
+		System.out.println("得到的数据："+name);
+		
+		//int  intValue = sc.nextInt();
+		/*sc.nextByte();
+		sc.nextShort();
+		sc.nextLong();
+		sc.nextFloat();
+		sc.nextDouble();
+		sc.nextBoolean();*/
+		
+		//特殊：针对控制台上录入的字符类型，我们的做法是：
+		//可以以字符串的方式接收过来。再通过charAt(下标)来进行提取。
+		System.out.println("输入您的性别:");
+		//“男”  使用了字符串中的一个charAt()方法来提取字符串中的字符。
+		//"男"---只有一个字符。那么我们的下标就是 0。
+		char sex = sc.next().charAt(0);
+		
+		System.out.println(sex);	
+	}
+}
