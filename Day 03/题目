@@ -1,0 +1,21 @@
+键盘输入四位数字的会员卡号
+使用“/”和“%”运算符分解获得会员卡各个位上的数字
+将各个位上数字求和
+根据分解后的数字之和，判断用户是否中奖。如果数字之和大于20，则中奖
+import java.util.*;
+public class test {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);//定义一个扫描器
+		System.out.println("请输入会员卡号");
+		int num=sc.nextInt();
+		int nb=num/1000+num/100%10+num/10%10+num%10;
+		System.out.println("卡号是："+num);
+		System.out.println("千位数是："+num/1000);
+		System.out.println("百位数是："+num/100%10);
+		System.out.println("十位数是："+num/10%10);
+		System.out.println("个位数是："+num%10);
+		System.out.println("会员卡号各位和是："+nb);
+		System.out.println(nb>20?"会员卡号"+nb+"的会员，您中奖了！奖品是MP3":"xiexie");
+		
+	}
+}  
