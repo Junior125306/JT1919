@@ -1,0 +1,39 @@
+/*简单计算器*/
+package com.it.www.test;
+
+import java.util.Scanner;
+
+public class ggong {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		System.out.println("请输入第一个数字");
+	    int a=sc.nextInt();
+	    System.out.println("请输入运算符");
+	    char fu=sc.next().charAt(0);
+	    System.out.println("请输入第二个数字");
+	    int b=sc.nextInt();
+		switch (fu) {
+		case '+':
+			 System.out.println("结果计算为"+(a+b));
+			break;
+		case '-':
+			 System.out.println("结果计算为"+(a-b));
+			break;
+		case '*':
+			 System.out.println("结果计算为"+(a*b));
+			break;
+		case '/':
+			 System.out.println("结果计算为"+(a/b));
+			break;
+		case '%':
+			 System.out.println("结果计算为"+(a%b));
+			break;
+		default:
+			System.out.println("不存在这个运算符哦");
+			break;
+		}
+		
+	}
+}
