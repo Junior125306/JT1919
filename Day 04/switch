@@ -1,0 +1,55 @@
+switch
+	语法格式
+	switch(表达式){
+		case 值1;
+			语句一;
+			break;//跳出整个switch语句体
+		case 值2;
+			语句一;
+			break;
+		......
+		[default:
+			break;]
+	}
+	1.switch后面的表达式和那个case匹配上了，我们就执行那个case里面的语句(语句可以有多条)
+	2.如果所有的case值都不匹配的话，就执行default语句
+	注意事项：
+	1.case后的值必须唯一 且不可以跟变量
+	2.switch后面的表达式可以是
+		a. int(byte short 自动转为int) 
+		b.String(char可以使用charAt()  char可以直接使用时因为对应的acsll码值)  
+		c.枚举类型可以支持
+	3. 每个case后面都可以有个break来表示跳出当前这个switch体，但是有些情况也是可以省略的
+	         但是会继续进行下一个case的内容直到遇到break为止
+	         如果一个switch没有一个break那么会将整个switch的语句全部执行完毕(包括default部分)
+	         这种现象称为case的穿透
+练习一、
+public class xiaotian {
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		System.out.println("请输入学生成绩：");
+		int score =sc.nextInt();
+		if(score>100||score<0){System.out.println("学生成绩异常，你玩我呢？");}
+		else{
+			switch (score/10) {
+			case 10:	
+			case 9:
+				System.out.println("学生成绩为优秀");
+				break;
+			case 8:
+				System.out.println("学生成绩为良好");
+				break;
+			case 7:
+				System.out.println("学生成绩为中等");
+				break;
+			case 6:
+				System.out.println("学生成绩为及格");
+				break;
+			default:
+				System.out.println("学生成绩为差");
+				break;
+			}
+		}
+		sc.close();
+	}
+}
