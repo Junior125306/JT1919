@@ -1,0 +1,107 @@
+
+	1）if
+	1.1 基本if语句的使用
+	<1>if(表达式1){
+		语句一;
+		语句二;
+		......
+	   }
+	含义：if后面的表达式结果为真时(true),就执行花括号语句中的部分
+	如果结果为假(false),则跳过直接执行语句后的部分
+	<2>if(表达式)语句一;（只能写一条语句不推荐使用）
+	<3>if(表达式1){
+		语句一;
+		语句二;
+		......
+	   }else{
+		语句一;
+		语句二;
+		......
+	   }
+	<4>if(表达式1){
+			if(表达式1){
+				语句一;
+	   		}else{
+				语句一;
+	   			}
+	   }else{
+		语句一;
+	   }
+	<5>		if(score>100||score<0){
+			System.out.println("属于非法数据，你玩我呢？");
+		}else if (score>=90) {
+			System.out.println("成绩"+score+"为优秀");
+		}else if (score>=80) {
+			System.out.println("成绩"+score+"为良好");
+		}else if (score>=70) {
+			System.out.println("成绩"+score+"为中等");
+		}else if (score>=60) {
+			System.out.println("成绩"+score+"为及格");
+		}else {
+			System.out.println("成绩"+score+"不及格");
+		}
+		短路版模式 性能比并列的高
+练习一：任意输入三个整数，求出其中最大值
+	/*
+public class Main {
+	public static void main(String[] args) {
+		System.out.println("请输入三个整数");
+		Scanner sc= new Scanner(System.in);
+		int a =sc.nextInt();
+		int b =sc.nextInt();
+		int c =sc.nextInt();
+		System.out.println("三个数字为："+a+","+b+","+c);
+		if (a>b) {
+			if(a>c){
+				System.out.println("最大值为："+a);
+			}
+		}else if(b>c){
+			System.out.println("最大值为："+b);
+		}
+		else{
+			System.out.println("最大值为："+c);
+		}
+	}
+}
+	*/
+练习二、
+/*
+public class xiaotian {
+
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		System.out.println("请输入你的成绩");
+		double score =sc.nextDouble();
+		if(score>100||score<0){
+			System.out.println("属于非法数据");
+		}else if (score>=90) {
+			System.out.println("成绩为优秀");
+		}else if (score>=80) {
+			System.out.println("成绩为良好");
+		}else if (score>=70) {
+			System.out.println("成绩为中等");
+		}else if (score>=60) {
+			System.out.println("成绩为及格");
+		}else {
+			System.out.println("成绩不及格");
+		}
+		sc.close();
+	}
+}
+*/
+练习三、
+/*
+public class xiaotian {
+
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		System.out.println("请输入您的四位会员卡号：");
+		int id = sc.nextInt();
+		int b =id/100%10;
+		int random =(int)(Math.random()*10);
+		if(b==random){
+			System.out.println("恭喜卡号"+id+"的用户,您的幸运数字为"+random+"。恭喜获得一个哈哈哈怪");
+		}else{System.out.println("您的幸运数字为"+random+"，很遗憾没有中奖"+id+"号客户，谢谢您的支持");}
+		sc.close();
+	}
+*/
