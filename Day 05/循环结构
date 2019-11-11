@@ -1,0 +1,116 @@
+循环结构
+.循环结构：针对某些业务的实现，我们可能需要去反复的执行一段程序，那么我们就可以使用循环结构
+
+.循环语句的语法分类
+
+	1、while循环语句
+	
+	语法结构：
+			while(表达式){
+				语句;
+			}
+	    
+	注意:
+		<1>表达式的值只能是boolean类型
+		<2>在循环体中一定要有改变条件的语句，否则就是一个死循环
+		<3>当表达式结果为true执行花括号里的语句,执行后在此回去判断条件,
+		直到条件不成立的时候才会终止循环
+		<4>对于循环一定要有出口
+	/*死循环
+		while (true) {
+			System.out.println("执行了一次");
+			is =false;
+		}
+	*/
+	/*执行了十次
+    int i=1;
+     while (i<=10) {
+    	System.out.println("执行了第"+i+"次");
+	    i++;
+     }
+	*/
+	2、do-while循环语句
+	语法结构：do{
+				语句;
+			}while(表达式);
+	注意:
+		<1>表达式的值只能是boolean类型
+		<2>在循环体中一定要有改变条件的语句，否则就是一个死循环
+		<3>无论如何都要执行一次循环，后续的循环是否继续执行，取决于表达式的结果。
+		如果为true返回去继续执行,如果为false则跳出循环。
+		<4>对于循环一定要有出口	
+	break可以跳出循环
+		1.break可以使用在switch中表示跳出整个switch语句体
+		2.break可以使用在循环体中(while,do-while,for)表示终止整个循环
+		
+	区别：
+	3、for循环语句
+	
+	语法格式：
+		for(int i=0;i<value;i++){
+			语句;
+		}			
+		(变量的初始化;条件判断;变量改变)
+		三个表达式都可以省略
+		int i=0;
+		for(;i<value;i++){
+			语句;
+		}	
+		int i=0;
+			for(;i<value;){
+				语句;i++;
+			}	
+		/*死循环(一切都不确定)
+		int i=0;
+			for(;;){
+				语句;i++;
+			}
+		*/	
+	for增强循环
+		for(变量:集合){
+			语句;
+		}
+	int[] is={1,2,3,4,5};
+	for(int v : is){
+		System.out.println(v);
+	}
+	//打印出了is的全部数据  
+	能够使用for增强循环的地方,一定能使用for标准循环来完成
+	能够使用for标准循环的地方不一定能使用for增强循环来代替
+	for增强循环是for标准循环的一种特例
+
+注意：以上的各种循环语句都是可以嵌套使用的  一般超不过三层
+	
+练习一、一百以内偶数和
+public class helloworld {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int i=0,j=0,k=0,sum1=0,sum2=0,sum3=0;//定义值
+//while方法
+		while (i<=100) {
+			if(i%2==0){
+				sum1+=i;
+			}
+			i++;
+		}
+		System.out.println("while方法：100以内偶数和是"+sum1);
+//do-while方法
+		do{
+			if(k%2==0){
+				sum2+=k;
+			}
+			k++;
+		}while(k<=100);
+		System.out.println("do-while方法：100以内偶数和是"+sum2);
+//for方法
+		for (; j <=100; j++) {
+			if(j%2==0){
+				sum3+=j;
+			}
+		}
+		System.out.println("for方法：100以内偶数和是"+sum3);
+	}
+	
+}
+~~删除线~~
