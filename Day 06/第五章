@@ -1,0 +1,85 @@
+一、多重循环（循环中套循环）
+多重循环一般不宜超过三层
+注意：多重循环的一个很重要的特点：外层循环执行1次，内层循环需要执行一轮。
+所以潜逃的循环就是外部循环和内部循环次数的乘积
+各种循环之间可以互相的嵌套
+public class helloworld {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		sc.close();
+		System.out.println("=======九九乘法表======");
+		for (int i = 1; i <=9 ; i++) {
+			for (int j = 1; j <=i ; j++) {
+				System.out.print(i+"*"+j+"="+((i*j)<10?"0"+(i*j):(i*j))+"\t");
+			}
+			System.out.println("");
+		}
+	}
+	
+}
+
+二、break用法
+	a、用于循环体中表示终止整个循环
+	b、用于switch-case语句中表示跳出整个switch语句体
+
+三、continue用法
+	跳出当次循环   终止众多循环中的某一次循环
+
+四、return用法
+	a、表示(函数)方法结束    return后面不能编写代码因为永远不会执行的
+	b、在java中如果需要定义一个有返回值的方法必须要使用return关键字
+
+补充：java中的表示符  给类、变量、方法等，取得名字，这些单词就是标识符。标识符不要使用关键词
+	1.给类取名规则 首字母大写如Test、Person、ProductInfo
+	2.给变量(属性)取名规则：小写单词 name、age  常亮大写：MAX MIN MAX_VALUE
+	3.给方法(函数)取名规则：小写单词(动词)+名词(首字母大写) getValue、getNAME
+	3.包名的命名规范：全部都是小写，要求大家在学习的过程中至少四级包  如 com.it.www.test
+		以后再开发公司中团队会统一制定命名规则
+		编写的程序一定要养成添加注释的习惯
+五、Java中所谓的方法
+
+	方法：也称为“函数”，表示的是某种行为动作。（能干啥 做什么）
+	
+	如何定义方法（语法格式）
+	 	a、			所有的数据类型都可以用void表示此方法没有返回值
+	 					|	
+	 方法修饰符	 static  返回类型    方法名称 (参数列表....){
+	 		.....方法体.....
+	 }
+	 	public static void main(String[] args){
+	 		
+	 	}
+	方法调用==================================
+	public static void main(String[] args) {
+		doinb();//调用没有参数的
+		caps("张振宇",20);//调用有参数的传入的实际参数  简称实参
+		//在main方法中调用，并接受返回的结果
+		int result=gmgong(12,12);
+		System.out.println(result);
+		System.out.println(gmgong(12,12));
+	}
+	//没有参数 无返回值
+	public static void doinb(){
+		System.out.println("Hello World!!!");
+	}
+	//有参数  无返回值
+	public static void caps(String name,int age){//形式参数  简称形参
+		System.out.println("姓名："+name+"\t年龄："+age);
+	}
+	//有参数 有返回值
+	public static int gmgong(int a,int b){
+		int sum =a+b;
+		return sum;
+	}
+	在调用方法的时候，实参类型一定要和形参类型对应和相容    数据类型向下兼容
+	方法分类==================================	
+	1.有返回值，无参数的方法
+	2.无返回值，无参数的方法
+	3.有返回值，有参数的方法
+
+
+
+
+
+
