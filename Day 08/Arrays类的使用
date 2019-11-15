@@ -1,0 +1,14 @@
+Arrays是数组操作的一个辅助类。是java内部提供的
+	同等的类有 System类 、Scanner类、String类、Math类
+	
+	Arrays.sort();针对数组进行排序的处理
+
+	boolean equals(array1,array2);比较两个数组是否相等
+	
+	String toString(array);将一个数组转换为一个字符串
+	
+	void fill(array,val);将数组的所有元素都赋值为val
+	
+	copyOf(array,length);把一个数组复制成一个长度为length的新数组，返回类型与复制数组一致
+	
+	int binarySearch(array,val);查询元素值val在数组array中的下标(要求按照升序排列)
