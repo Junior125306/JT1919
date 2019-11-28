@@ -1,0 +1,120 @@
+===============集合框架===============
+一、集合框架的体系结构
+Collection 集合的超级根接口
+ 	|---List接口
+ 		|---实现类一、Arraylist实现类
+ 		|---实现类二、LinkedList实现类
+ 		|---实现类三、VecTor实现类
+ 	|---Set接口
+  		|---实现类三、HoshSet实现类
+  		|---实现类三、TreeSet实现类
+  		|---实现类三、LinkedHashSet实现类
+	
+|---Map接口
+	|-----实现类一、HashMap实现类
+	|-----实现类二、TreeMap实现类
+	|-----实现类二、Hashtable实现类
+	|-----实现类二、LinkedHAshMap实现类
+
+二、集合容器（框架）的特点？
+
+Collection 接口存储一组不唯一，无序的对象
+
+List
+	size()元素个数		
+	hasNext()是否有下一个
+	clear()清除当前集合元素
+	isEmpty()判断是否为空
+	toArray()转换成数组
+
+	1、特点：List接口存储一组不唯一，有序（插入顺序）的对象
+	实现类一、ArrList实现类
+		数据结构：底层使用的是动态数组的实现，在遍历元素的时候有较高的效率，插入和删除元素时效率较低
+		同步性：基于线程非同步，适用于单线程的环境
+		容量增长比例：ArrList是以自身的二分之一进行扩充的
+	
+	实现类二、LinkedList实现类
+		数据结构：底层使用的是链表结构，便利的效率较低，插入和删除效率较高
+		同步性：基于线程非同步，适用于单线程的环境
+		linkedList是一个双向链表，没有初始化大小，也没有扩容的机制，就是一直在前面或者后面新增就好。 
+		独有方法：
+		list.addFirst()
+		list.addLast()
+		list.removeFirst();//移除第一个
+		list.removeLast();//移除最后一个
+	实现类二、Vector实现类
+		数据结构：底层使用的是动态数组的实现，在遍历元素的时候有较高的效率，插入和删除元素时效率较低
+		同步性：基于线程同步，适用于多线程的环境
+		容量增长比例：Vertor是以自身的二倍进行扩充的
+		
+Set
+	size()元素个数		
+	hasNext()是否有下一个
+	clear()清除当前集合元素
+	isEmpty()判断是否为空
+	toArray()转换成数组
+	1、特点：保存的数据是不能重复的，而且无法保证任何顺序
+	
+	实现类一、HashSet类
+		数据结构：底层使用的是Hash散列表（Hash算法）来进行数据保存
+		同步性：基于线程非同步，适用于单线程的环境
+		容量增长比例：默认的初始容量是16，加载因子是0.75
+	实现类二、TreeSet类
+		数据结构：底层使用的是二叉树（红黑树），二叉树特点是元素需要进行排序
+		同步性：基于线程非同步，适用于单线程的环境
+		容量增长比例 ：没有初始化大小，也没有扩容的机制
+	
+	二叉树数据中保存的数据类型必须是要同一种类型
+	二叉树数据结构中保存的数据必须具有可比性
+	比较字符串时提取字符串中的第一个字符，转换为ASCII码进行比较
+实现没有可比性的自定义类型对象的比较
+	一、引用Comparable比较器接口
+	public int compareTo(Object o){
+		Persin person = (Person)o;
+		//实现的是年龄的比较
+		return this.getAge()-person.getAge();
+	}
+	实现了Comparable接口的对象时可以直接加入到TreeSet集合中的 并且可以直接比较
+	
+	二、在创建Treeset这个容器的时候  定义了一个Comparator比较器,实现比较的规则的编写
+	TreeSet set=new TreeSet(new Comparator(){//匿名内部类使用方案
+		Public int compare(Object o1,Object o2){
+			Person1 p1=(Person1)o1;
+			Person1 p2=(Person1)o2;
+			return p1.getAge()-p2.getAge();
+		}
+	})
+		
+	实现类三、LinkedHashSet类
+		数据结构：底层链表+Hash算法结构进行数据的保存，可以保证插入时的顺序，同时插入元素和删除元素的效率较高
+		同步性：基于线程非同步，适用于单线程的环境
+		容量增长比例 ：默认的初始容量是16，加载因子是0.75
+	
+Map
+	1、接口存储一组键-值映射构成的元素
+	实现类一、HashMap实现类
+	
+	实现类二、TreeMap实现类
+	
+	实现类二、Hashtable实现类
+	
+	实现类二、LinkedHAshMap实现类
+	
+遍历集合
+一
+	for (int i = 0; i < list.size(); i++) {
+				Object obj =list.get(i);
+				News n=(News) obj;
+				System.out.println(n.getNewID());
+	}
+			
+	for (Object object : list) {
+		System.out.println(((News)(object)).getNewName());
+	}
+二
+迭代器
+	Iterator it =list.iterator();
+	while(it.hasNext()){//判断有没有下一个
+		Object obj=it.next();
+		System.out.println(obj);
+	}
